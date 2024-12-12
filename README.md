@@ -1,6 +1,6 @@
 # fitness_time
 
-A new Flutter project.
+Aplicacion de ejemplo para el curso de desarrollo de aplicaciones en Flutter.
 
 ## Getting Started
 
