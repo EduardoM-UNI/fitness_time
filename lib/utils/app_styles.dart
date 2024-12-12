@@ -7,6 +7,7 @@ class AppStyles {
   static const chrysterBlueColor = Color(0xFF3407DA);
   static const darkBlueColor = Color(0xFF181528);
   static const greyColor = Colors.black45;
+  static const greyColor02 = Color.fromARGB(164, 192, 191, 191);
   static const whiteColor = Colors.white;
 
   static const bigTitle = TextStyle(fontSize: 40);

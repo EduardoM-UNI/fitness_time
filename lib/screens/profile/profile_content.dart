@@ -20,20 +20,20 @@ class ProfileContent extends StatelessWidget {
             const SizedBox(height: 20),
             _circularImage(),
             const SizedBox(height: 25),
-            DefaultAppText(
+            const DefaultAppText(
               text: "Antonia Font",
               styles: AppStyles.bigTitle,
             ),
-            DefaultAppText(
+            const DefaultAppText(
               text: "Des del 20 d'abril del 2022",
               styles: AppStyles.otherTitle,
             ),
             const SizedBox(height: 30),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 DefaultProfileCard(
-                  iconData: Icons.timer,
+                  iconData: Icons.access_alarm,
                   textUnit: "Time",
                   textValue: "2h 45'",
                   cardWith: 75,
@@ -63,9 +63,12 @@ class ProfileContent extends StatelessWidget {
 }
 
 Widget _circularImage() {
-  return const CircleAvatar(
-    radius: 100,
-    backgroundImage: NetworkImage(AppUrls.avatarImage),
+  return const Hero(
+    tag: "Image",
+    child: CircleAvatar(
+      radius: 100,
+      backgroundImage: NetworkImage(AppUrls.avatarImage),
+    ),
   );
 }
 
@@ -81,9 +84,9 @@ Widget _sliderHeigh() {
         value: 30,
         min: 0,
         max: 100,
-        onChanged: null,
+        onChanged: onChanged,
         activeColor: AppStyles.heliotropeColor,
-        inactiveColor: AppStyles.greyColor,
+        inactiveColor: AppStyles.greyColor02,
         thumbColor: AppStyles.heliotropeColor,
       ),
       Text(
@@ -106,9 +109,9 @@ Widget _sliderWeight() {
         value: 15,
         min: 0,
         max: 100,
-        onChanged: null,
+        onChanged: onChanged,
         activeColor: AppStyles.heliotropeColor,
-        inactiveColor: AppStyles.greyColor,
+        inactiveColor: AppStyles.greyColor02,
         thumbColor: AppStyles.heliotropeColor,
       ),
       Text(
@@ -118,3 +121,5 @@ Widget _sliderWeight() {
     ],
   );
 }
+
+void onChanged(double value) {}

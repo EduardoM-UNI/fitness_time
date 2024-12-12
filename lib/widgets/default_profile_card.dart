@@ -2,12 +2,12 @@ import 'package:fitness_time/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class DefaultProfileCard extends StatelessWidget {
-  IconData iconData;
-  String textUnit;
-  String textValue;
-  double cardWith;
+  final IconData iconData;
+  final String textUnit;
+  final String textValue;
+  final double cardWith;
 
-  DefaultProfileCard({
+  const DefaultProfileCard({
     super.key,
     required this.iconData,
     required this.textUnit,

@@ -1,4 +1,4 @@
-import 'package:fitness_time/screens/profile/profile_content.dart';
+import 'package:fitness_time/screens/home/home_page.dart';
 import 'package:fitness_time/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      home: const ProfileContent(),
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
