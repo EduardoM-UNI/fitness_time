@@ -41,8 +41,8 @@ class HomeContent extends StatelessWidget {
               label: "Cercar",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Setting',
+              icon: Icon(Icons.shopping_cart),
+              label: 'Botiga',
             ),
           ],
         ),
