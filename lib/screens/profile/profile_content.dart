@@ -3,15 +3,17 @@ import 'package:fitness_time/utils/app_urls.dart';
 import 'package:fitness_time/widgets/default_app_text.dart';
 import 'package:fitness_time/widgets/default_profile_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileContent extends StatelessWidget {
   const ProfileContent({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Perfil"),
+        title: Text(localizations.userdata),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -24,21 +26,21 @@ class ProfileContent extends StatelessWidget {
               text: "Antonia Font",
               styles: AppStyles.bigTitle,
             ),
-            const DefaultAppText(
-              text: "Des del 20 d'abril del 2022",
+            DefaultAppText(
+              text: localizations.date04,
               styles: AppStyles.otherTitle,
             ),
             const SizedBox(height: 30),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                DefaultProfileCard(
+                const DefaultProfileCard(
                   iconData: Icons.access_alarm,
                   textUnit: "Time",
                   textValue: "2h 45'",
                   cardWith: 75,
                 ),
-                DefaultProfileCard(
+                const DefaultProfileCard(
                   iconData: Icons.point_of_sale,
                   textUnit: "Km",
                   textValue: "212,4",
@@ -46,15 +48,15 @@ class ProfileContent extends StatelessWidget {
                 ),
                 DefaultProfileCard(
                   iconData: Icons.home,
-                  textUnit: "Activities",
+                  textUnit: localizations.activities,
                   textValue: "42",
                   cardWith: 90,
                 ),
               ],
             ),
             const SizedBox(height: 30),
-            _sliderHeigh(),
-            _sliderWeight(),
+            _sliderHeigh(localizations.height),
+            _sliderWeight(localizations.weight),
           ],
         ),
       ),
@@ -72,15 +74,15 @@ Widget _circularImage() {
   );
 }
 
-Widget _sliderHeigh() {
-  return const Row(
+Widget _sliderHeigh(dynamic localizations) {
+  return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(
-        "Height",
+        localizations,
         style: AppStyles.otherTitle,
       ),
-      Slider(
+      const Slider(
         value: 30,
         min: 0,
         max: 100,
@@ -89,7 +91,7 @@ Widget _sliderHeigh() {
         inactiveColor: AppStyles.greyColor02,
         thumbColor: AppStyles.heliotropeColor,
       ),
-      Text(
+      const Text(
         "150 cm",
         style: AppStyles.otherTitle,
       )
@@ -97,15 +99,15 @@ Widget _sliderHeigh() {
   );
 }
 
-Widget _sliderWeight() {
-  return const Row(
+Widget _sliderWeight(dynamic localizations) {
+  return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(
-        "Weight",
+        localizations,
         style: AppStyles.otherTitle,
       ),
-      Slider(
+      const Slider(
         value: 15,
         min: 0,
         max: 100,
@@ -114,7 +116,7 @@ Widget _sliderWeight() {
         inactiveColor: AppStyles.greyColor02,
         thumbColor: AppStyles.heliotropeColor,
       ),
-      Text(
+      const Text(
         "55 kg",
         style: AppStyles.otherTitle,
       )

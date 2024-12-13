@@ -4,6 +4,7 @@ import 'package:fitness_time/utils/app_urls.dart';
 import 'package:fitness_time/widgets/default_app_text.dart';
 import 'package:fitness_time/widgets/default_home_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HomeContent extends StatelessWidget {
@@ -11,6 +12,7 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     return Scaffold(
         appBar: AppBar(
             title: const Text("Fitness Time"),
@@ -31,49 +33,49 @@ class HomeContent extends StatelessWidget {
               ),
             ]),
         bottomNavigationBar: BottomNavigationBar(
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Inici",
+              icon: const Icon(Icons.home),
+              label: localizations.init,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: "Cercar",
+              icon: const Icon(Icons.search),
+              label: localizations.search,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
-              label: 'Botiga',
+              icon: const Icon(Icons.shopping_cart),
+              label: localizations.store,
             ),
           ],
         ),
         body: SingleChildScrollView(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 20, left: 20.0),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, left: 20.0),
               child: DefaultAppText(
-                text: "Hola Antònia,",
+                text: localizations.name,
                 styles: AppStyles.bigTitle,
               ),
             ),
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-              child: _textJustificat(),
+              child: _textJustificat(localizations.tip),
             ),
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: Align(
                 alignment: Alignment.centerRight,
-                child: _textLink(),
+                child: _textLink(localizations.moredetails),
               ),
             ),
             const SizedBox(height: 30),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
               child: DefaultAppText(
-                text: "Darreres activitats",
+                text: localizations.lastactivities,
                 styles: AppStyles.mediumTitle,
               ),
             ),
@@ -81,20 +83,23 @@ class HomeContent extends StatelessWidget {
               padding: EdgeInsets.only(left: 20.0, right: 20.0),
               child: Divider(),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 20.0),
-              child:
-                  DefaultHomeCard(textDate: "Ayer, 18:20", textKms: "7,300 km"),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 20.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: DefaultHomeCard(
-                  textDate: "15 Sept 2024, 21:45", textKms: "6,550 km"),
+                  textDate: localizations.date01,
+                  textKms: localizations.distance01),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 20.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: DefaultHomeCard(
-                  textDate: "10 Sept 2024, 21:33", textKms: "7,100 km"),
+                  textDate: localizations.date02,
+                  textKms: localizations.distance02),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: DefaultHomeCard(
+                  textDate: localizations.date03,
+                  textKms: localizations.distance03),
             ),
             const SizedBox(height: 30),
             Padding(
@@ -102,8 +107,8 @@ class HomeContent extends StatelessWidget {
               child: Column(
                 children: [
                   _circularProgress(),
-                  const DefaultAppText(
-                    text: "Objetiu mensual",
+                  DefaultAppText(
+                    text: localizations.mensualobject,
                     styles: AppStyles.otherTitle,
                   ),
                 ],
@@ -124,18 +129,17 @@ Widget _circularImage() {
   );
 }
 
-Widget _textJustificat() {
-  return const Text(
-    "Recorda beure aigua regularment al llarg del dia per "
-    "mantenir el teu cos hidratat i millorar el teu rendiment fisic i mental.",
+Widget _textJustificat(dynamic localizations) {
+  return Text(
+    localizations,
     style: AppStyles.otherTitle,
   );
 }
 
-Widget _textLink() {
-  return const Text(
-    "Mes details",
-    style: TextStyle(
+Widget _textLink(dynamic localizations) {
+  return Text(
+    localizations,
+    style: const TextStyle(
       color: Colors.blue,
       decoration: TextDecoration.underline,
       decorationColor: Colors.blue,

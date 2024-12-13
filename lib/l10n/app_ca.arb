@@ -1,0 +1,21 @@
+{
+    "init":"Inici",
+    "search":"Cercar",
+    "store":"Botiga",
+    "name":"Hola Antònia,",
+    "lastactivities":"Darreres activitats",
+    "date01":"Ayer, 18:20",
+    "distance01":"7,300 km",
+    "date02":"15 Sept 2024, 21:45",
+    "distance02":"6,550 km",
+    "date03":"10 Sept 2024, 21:33",
+    "distance03":"7,100 km",
+    "mensualobject":"Objetiu mensual",
+    "tip":"Recorda beure aigua regularment al llarg del dia per mantenir el teu cos hidratat i millorar el teu rendiment fisic i mental.",
+    "moredetails": "Mes details",
+    "userdata":"Perfil",
+    "date04":"Des del 20 d'abril del 2022",
+    "activities":"Activitats",
+    "height":"Altura",
+    "weight":"Peso"
+}
