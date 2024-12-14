@@ -107,6 +107,7 @@ class HomeContent extends StatelessWidget {
               child: Column(
                 children: [
                   _circularProgress(),
+                  const SizedBox(height: 5),
                   DefaultAppText(
                     text: localizations.mensualobject,
                     styles: AppStyles.otherTitle,
