@@ -1,4 +1,4 @@
-import 'package:fitness_time/screens/profile/profile_content.dart';
+import 'package:fitness_time/screens/profile/profile_page.dart';
 import 'package:fitness_time/utils/app_styles.dart';
 import 'package:fitness_time/utils/app_urls.dart';
 import 'package:fitness_time/widgets/default_app_text.dart';
@@ -26,7 +26,7 @@ class HomeContent extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ProfileContent(),
+                      builder: (context) => const ProfilePage(),
                     ),
                   );
                 },
